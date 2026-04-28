@@ -45,17 +45,31 @@ mvn spring-boot:run
 
 ## 3. 更新南京小区房价数据（Python 爬虫）
 
-安装依赖：
-
-```bash
-python3 -m pip install -r requirements.txt
-```
-
-运行爬虫：
+运行爬虫（脚本仅依赖 Python 标准库，无需额外 pip 安装）：
 
 ```bash
 python3 python/crawler_nanjing_prices.py --max-pages 3 --output data/nanjing_prices.json
+# 如果网络被限制，会自动回退到 src/main/resources/data/nanjing_prices.json
 ```
+
+
+### 3.1 如果出现 403（代理拦截）怎么办？
+
+可以用以下两种方式：
+
+1. 指定可用代理：
+
+```bash
+python3 python/crawler_nanjing_prices.py --max-pages 3 --proxy http://127.0.0.1:7890 --output data/nanjing_prices.json
+```
+
+2. 使用离线 HTML 验证解析流程（适合当前网络受限环境）：
+
+```bash
+python3 python/crawler_nanjing_prices.py --offline-html python/sample_lianjia_page.html --output data/nanjing_prices.json
+```
+
+无论在线抓取还是离线解析，只要结果为空，脚本都会自动回退到 `src/main/resources/data/nanjing_prices.json`。
 
 ## 4. 让 Maven 启动的 Java 应用读取爬虫输出文件
 

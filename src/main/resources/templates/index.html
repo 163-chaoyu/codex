@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南京小区房价看板</title>
+    <style>
+        :root {
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1f2937;
+            --subtext: #6b7280;
+            --accent: #2563eb;
+            --border: #e5e7eb;
+        }
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+        .container {
+            max-width: 1000px;
+            margin: 32px auto;
+            padding: 0 16px;
+        }
+        .header {
+            margin-bottom: 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        p {
+            margin-top: 8px;
+            color: var(--subtext);
+        }
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 14px 12px;
+            border-bottom: 1px solid var(--border);
+            text-align: left;
+            font-size: 14px;
+        }
+        th {
+            background: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+        tr:last-child td {
+            border-bottom: none;
+        }
+        .price {
+            color: var(--accent);
+            font-weight: 600;
+        }
+        .footer {
+            margin-top: 14px;
+            color: var(--subtext);
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1>南京小区房价（元/㎡）</h1>
+        <p>数据来源：Python 爬虫抓取房产网站公开页面，按均价降序展示。</p>
+    </div>
+
+    <div class="card">
+        <table>
+            <thead>
+            <tr>
+                <th>小区</th>
+                <th>区域</th>
+                <th>均价</th>
+                <th>抓取日期</th>
+                <th>来源</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="item : ${prices}">
+                <td th:text="${item.communityName}">示例小区</td>
+                <td th:text="${item.district}">鼓楼</td>
+                <td class="price" th:text="${item.avgUnitPrice} + ' 元/㎡'">50000 元/㎡</td>
+                <td th:text="${item.crawlDate}">2026-04-28</td>
+                <td th:text="${item.source}">https://nj.lianjia.com</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        API：<code>/api/prices</code>
+    </div>
+</div>
+</body>
+</html>

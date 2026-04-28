@@ -1,0 +1,58 @@
+[
+  {
+    "communityName": "仁恒江湾城",
+    "district": "建邺",
+    "avgUnitPrice": 78600,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  },
+  {
+    "communityName": "金陵御沁园",
+    "district": "鼓楼",
+    "avgUnitPrice": 72100,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  },
+  {
+    "communityName": "中海塞纳丽舍",
+    "district": "玄武",
+    "avgUnitPrice": 68300,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  },
+  {
+    "communityName": "保利香槟国际",
+    "district": "秦淮",
+    "avgUnitPrice": 63500,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  },
+  {
+    "communityName": "世茂外滩新城",
+    "district": "鼓楼",
+    "avgUnitPrice": 59800,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  },
+  {
+    "communityName": "朗诗国际街区",
+    "district": "雨花台",
+    "avgUnitPrice": 53400,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  },
+  {
+    "communityName": "万科金色里程",
+    "district": "江宁",
+    "avgUnitPrice": 43800,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  },
+  {
+    "communityName": "正荣润锦城",
+    "district": "浦口",
+    "avgUnitPrice": 31500,
+    "source": "https://nj.lianjia.com",
+    "crawlDate": "2026-04-28"
+  }
+]

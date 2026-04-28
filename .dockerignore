@@ -1,0 +1,6 @@
+.git
+.gitignore
+README.md
+python/__pycache__
+*.pyc
+target
